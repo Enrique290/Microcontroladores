@@ -11,10 +11,8 @@ cont equ 0x31
 resultado equ 0x32
 
 Inicio:
-    MOVLW 0x07
-    MOVWF CMCON
     BCF STATUS, RP1
-    BCF STATUS, RP0
+    BSF STATUS, RP0
     MOVLW b'00000000'
     MOVWF TRISA
     MOVWF TRISB
@@ -38,6 +36,6 @@ loop: ADDWF num, 0
 	DECFSZ cont
 	GOTO loop
 MOVWF resultado
-MOVWF PORTB
+MOVWF PORTB	
 
 END
