@@ -76,7 +76,7 @@ LOOPK
 	    
 NOTAS ;Notas para reproducir la cancion
     MOVFW nota
-    XORLW d'27'
+    XORLW d'31'
     BTFSS STATUS,Z
     GOTO $+2
     CLRF nota
